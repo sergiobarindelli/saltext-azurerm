@@ -1,3 +1,4 @@
+exit(0)
 """
 Azure Resource Manager Cloud Module
 ===================================
