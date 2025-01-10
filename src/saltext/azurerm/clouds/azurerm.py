@@ -1108,7 +1108,7 @@ def request_instance(vm_, kwargs=None):
         plan=None,
         hardware_profile=HardwareProfile(
             # vm_size=getattr(VirtualMachineSizeTypes, vm_["size"].lower(), kwargs),
-            vm_size=vm_["size"].lower(),
+            vm_size=vm_["size"],
         ),
         storage_profile=StorageProfile(
             os_disk=os_disk,
