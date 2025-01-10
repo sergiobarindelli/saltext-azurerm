@@ -49,7 +49,15 @@ except ImportError:
 __opts__ = salt.config.minion_config("/etc/salt/minion")
 __salt__ = salt.loader.minion_mods(__opts__)
 
+# log = logging.getLogger(__name__)
 log = logging.getLogger(__name__)
+log.setLevel(logging.DEBUG)
+from http.client import HTTPConnection
+HTTPConnection.debuglevel = 1
+requests_log = logging.getLogger("requests.packages.urllib3")
+requests_log.setLevel(logging.DEBUG)
+requests_log.propagate = True
+
 
 
 def __virtual__():
